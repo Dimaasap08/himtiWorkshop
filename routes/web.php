@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/','utamacontroller@index')->name('home');
+Route::get('/karyawan', 'utamacontroller@create')->name('karyawan');
+Route::get('/tambah', 'utamacontroller@input')->name('input');
+Route::post('/karyawan', 'utamacontroller@store')->name('tambah');
+Route::get('/karyawan/edit/{id}', 'UtamaController@edit');
+Route::put('/karyawan/{id}', 'UtamaController@update');
+Route::delete('/karyawan/{id}', 'UtamaController@destroy');
